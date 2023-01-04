@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  typing-app:
+    container_name: typing-app
+    build: ./docker
+    ports:
+      - '8080:80'
+    volumes:
+      - ./typing-app:/var/www/html
