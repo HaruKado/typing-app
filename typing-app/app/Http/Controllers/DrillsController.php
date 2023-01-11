@@ -13,6 +13,17 @@ class DrillsController extends Controller
         return view('drills.index', ['drills' => $drills]);
     }
 
+    public function show($id)
+    {
+        if(!ctype_digit($id)){
+        return redirect('/drills/new')->with('flash_message', __('Invalid operation was performed.'));
+    }
+
+    $drill = Drill::find($id);
+
+    return view('drills.show', ['drill' => $drill]);
+}
+
     public function create()
     {
         return view('drills.new');

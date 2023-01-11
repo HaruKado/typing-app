@@ -20,4 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('drills', DrillsController::class)->only(['index', 'create', 'store', 'edit', 'update']);
+Route::resource('drills', DrillsController::class)->only(['index', 'show' ,'create', 'store', 'edit', 'update']);
